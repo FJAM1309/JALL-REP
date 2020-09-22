@@ -3,4 +3,6 @@
 void main ( void ) 
 { 
     printf("I am JA"); 
+    printf("I am LG"); 
+
 } 
