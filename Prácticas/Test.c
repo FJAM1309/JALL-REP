@@ -2,7 +2,6 @@
 
 void main ( void ) 
 { 
-    printf("I am JA");
     printf("I am FJAM");
-    printf("clase libre");
+    printf("I am LG"); 
 } 
