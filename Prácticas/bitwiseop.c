@@ -2,9 +2,10 @@
 
 typedef unsigned long u32Var;
 
+/*PM -> Buen codigo, replicaste tal cual el diagrama, solo arreglar detalles*/
 void main ( void )
 {
-	u32Var BitsVar = 0;
+	u32Var BitsVar = 0;			/*PM -> Recuerda la notacion hungara para las variables u32BitsVar*/
 	u32Var OpToDo = 0;
 	u32Var BitSel = 0;
 	u32Var VarRes = 0;
@@ -24,7 +25,7 @@ void main ( void )
 			printf( "seleccione la operacion deseada: " );
 			scanf( "%d", &OpToDo );
 
-			if( OpToDo > 3 || OpToDo <= 0 )
+			if( OpToDo > 3 || OpToDo <= 0 )			/* PM -> Recuerda usar #defines en lugar de numeros magicos*/
 			{
 				printf( "error. Por favor seleccione una opcion valida." );
 			}
@@ -35,11 +36,11 @@ void main ( void )
 			}
 			if( BitSel < BitsVar )
 			{
-				if( OpToDo == 1 )
+				if( OpToDo == 1 )					/* PM -> Recuerda usar #defines en lugar de numeros magicos*/
 				{
 					VarRes&=~( 1<<BitSel );
 				}
-				else if( OpToDo == 2 )
+				else if( OpToDo == 2 )				/* PM -> Recuerda usar #defines en lugar de numeros magicos*/
 				{
 					VarRes|=( 1<<BitSel );
 				}
