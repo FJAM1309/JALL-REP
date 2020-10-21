@@ -45,6 +45,6 @@ uint8 u8LuhnCheck ( uint8 *pu8Data )
 		}
 		u8TempCardNumber += pu8Data[i];
 	}
-	u8Check = u8TempCardNumber % 2;
+	u8Check = u8TempCardNumber % 10;
 	return u8Check;
 }
