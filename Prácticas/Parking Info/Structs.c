@@ -107,7 +107,7 @@ void main ( void )
 			}
 			else
 			{
-				printf("not a valid option\n\n")										// not a valid option 
+				printf("not a valid option\n\n");									// not a valid option 
 			}
 			printf("\n\n");
 		}
