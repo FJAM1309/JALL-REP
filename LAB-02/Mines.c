@@ -57,9 +57,7 @@ void main ( void )
 		    }
 
 			PlaceMines ( au8MineMap, u8GameDifficulty );
-			DisplayLostMap ( au8MineMap );
-
-
+			DisplayMap ( au8MineMap );
 
 	while ( 1 )
 	{
@@ -96,7 +94,7 @@ void main ( void )
 			break;
 		}
 
-		DisplayLostMap ( au8MineMap );
+		DisplayMap ( au8MineMap );
 	}
 }
 
