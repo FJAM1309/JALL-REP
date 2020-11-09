@@ -89,7 +89,8 @@ void main ( void )
 				}
 				else
 				{
-					printf("car fail to be added to sector %d, sector full \n", enSector); // if false, print "car failed to be added" and don't add payment
+					printf("car fail to be added to");
+					printf(" sector %d, sector full \n", enSector);						// if false, print "car failed to be added" and don't add payment
 				}
 			}
 			else if ( u8InputAction == 5 )
@@ -107,7 +108,7 @@ void main ( void )
 			}
 			else
 			{
-				printf("not a valid option\n\n");									// not a valid option 
+				printf("not a valid option\n\n");										// not a valid option 
 			}
 			printf("\n\n");
 		}
@@ -122,38 +123,10 @@ void main ( void )
 /*F1*/
 void ShowAvailableSlots ( tenParkingSectors enCurrentSector )
 {
-
 	uint8 u8ShowAvailable = 0; 															// extra var for available showing slots
 
-	if ( enCurrentSector == enSector0 )													// 5 if's for the 5 sectors
-	{
-		u8ShowAvailable = astMyParks[enSector0].u8AvailableSlots;						// equalize var to the slots in the defined sector from strc
-		printf("\nsector 0 available slots: %d\n", u8ShowAvailable);					// print of the var
-	}
-	else if ( enCurrentSector == enSector1 )											// other 4 sectors ---
-	{
-		u8ShowAvailable = astMyParks[enSector1].u8AvailableSlots;
-		printf("\nsector 1 available slots: %d\n", u8ShowAvailable);
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		u8ShowAvailable = astMyParks[enSector2].u8AvailableSlots;
-		printf("\nsector 2 available slots: %d\n", u8ShowAvailable);
-	}
-	else if ( enCurrentSector == enSector3 )
-	{	
-		u8ShowAvailable = astMyParks[enSector3].u8AvailableSlots;
-		printf("\nsector 3 available slots: %d\n", u8ShowAvailable);
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		u8ShowAvailable = astMyParks[enSector4].u8AvailableSlots;
-		printf("\nsector 4 available slots %d\n", u8ShowAvailable);
-	}
-	else																				// ---
-	{
-		// nothing to do
-	}
+	u8ShowAvailable = astMyParks[enCurrentSector].u8AvailableSlots;						// equalize var to the slots in the defined sector from strc
+	printf("\nsector: %d available slots: %d\n", enCurrentSector,u8ShowAvailable );		// print of the var
 }
 
 /*F2*/
@@ -161,242 +134,49 @@ void ShowNotAvailableSlots ( tenParkingSectors enCurrentSector )
 {
 	uint8 u8ShowNotAvailable = 0;														// extra var for showing unavailable slots
 
-	if ( enCurrentSector == enSector0 )													// 5 if's for each sector
-	{
-		u8ShowNotAvailable = astMyParks[enSector0].u8NotAvailableSlots;					// equalize var to the unavailable slots for each sector from the strc
-		printf("\nsector 0 not available slots: %d\n", u8ShowNotAvailable);				// print value
-	}
-	else if ( enCurrentSector == enSector1 )											// other 4 sectors ---
-	{
-		u8ShowNotAvailable = astMyParks[enSector1].u8NotAvailableSlots;
-		printf("\nsector 1 not available slots: %d\n", u8ShowNotAvailable);
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		u8ShowNotAvailable = astMyParks[enSector2].u8NotAvailableSlots;
-		printf("\nsector 2 not available slots: %d\n", u8ShowNotAvailable);
-	}
-	else if ( enCurrentSector == enSector3 )
-	{	
-		u8ShowNotAvailable = astMyParks[enSector3].u8NotAvailableSlots;
-		printf("\nsector 3 not available slots: %d\n", u8ShowNotAvailable);
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		u8ShowNotAvailable = astMyParks[enSector4].u8NotAvailableSlots;
-		printf("\nsector 4 not available slots %d\n", u8ShowNotAvailable);
-	}																					// ---
-	else
-	{
-		// nothing to do
-	}
+
+	u8ShowNotAvailable = astMyParks[enCurrentSector].u8NotAvailableSlots;				// equalize var to the unavailable slots for each sector from the strc
+	printf("\n sector: %d", enCurrentSector); 
+	printf(" not available slots: %d\n", u8ShowNotAvailable);							// print value
 }
 
 /*F3*/
 void ShowEarnedMoney ( tenParkingSectors enCurrentSector )
 {
 	uint8 u32ShowMoney = 0;																// extra var for showing money
-	if ( enCurrentSector == enSector0 )													// 5 if's for each sector
-	{
-		u32ShowMoney = astMyParks[enSector0].u32MoneyEarn;								// equalize var to money from each sector from strc
-		printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);			// print the value 
-	}
-	else if ( enCurrentSector == enSector1 )											// other sectors ---
-	{
-		u32ShowMoney = astMyParks[enSector1].u32MoneyEarn;
-		printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		u32ShowMoney = astMyParks[enSector2].u32MoneyEarn;
-		printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);
-	}
-	else if ( enCurrentSector == enSector3 )
-	{
-		u32ShowMoney = astMyParks[enSector3].u32MoneyEarn;
-		printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		u32ShowMoney = astMyParks[enSector4].u32MoneyEarn;
-		printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);
-	}																					// ---
-	else
-	{
-		//nothing to do 
-	}
+	u32ShowMoney = astMyParks[enCurrentSector].u32MoneyEarn;							// equalize var to money from each sector from strc
+	printf("\nmoney in sector %d is $%d", enCurrentSector, u32ShowMoney);				// print the value 
 }
 /*F4*/
 uint8 u8AddCarToSector( tenParkingSectors enCurrentSector )								// int func so a the value returned is either true or false
 {
-	if ( enCurrentSector == enSector0 )													// 5 if's for each sector
-	{
-		if ( astMyParks[enSector0].u8AvailableSlots > 0 )								// condition to ONLY add a car if there are available slots
+		if ( astMyParks[enCurrentSector].u8AvailableSlots > 0 )							// condition to ONLY add a car if there are available slots
 		{
-			astMyParks[enSector0].u8AvailableSlots--;									// one less available slot occupied (decrement)
-			astMyParks[enSector0].u8NotAvailableSlots++;								// one less notavailable slot (increment)
+			astMyParks[enCurrentSector].u8AvailableSlots--;								// one less available slot occupied (decrement)
+			astMyParks[enCurrentSector].u8NotAvailableSlots++;							// one less notavailable slot (increment)
 			return PARKING_LOT_AVAILABLE;												// return "true"
 		}
 		else																			// if there are no available slots
 		{
 			return PARKING_LOT_UNAVAILABLE;												// retrurn "false"
 		}
-	}																					// other sectors ---
-	else if ( enCurrentSector == enSector1 )
-	{
-		if ( astMyParks[enSector1].u8AvailableSlots > 0 )
-		{
-			astMyParks[enSector1].u8AvailableSlots--;
-			astMyParks[enSector1].u8NotAvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		if ( astMyParks[enSector2].u8AvailableSlots > 0 )
-		{
-			astMyParks[enSector2].u8AvailableSlots--;
-			astMyParks[enSector2].u8NotAvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if( enCurrentSector == enSector3 )
-	{
-		if ( astMyParks[enSector3].u8AvailableSlots > 0 )
-		{
-			astMyParks[enSector3].u8AvailableSlots--;
-			astMyParks[enSector3].u8NotAvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		if ( astMyParks[enSector4].u8AvailableSlots > 0 )
-		{
-			astMyParks[enSector4].u8AvailableSlots--;
-			astMyParks[enSector4].u8NotAvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}																					// ---
-	else
-	{
-		//nothing to do 
-	}
 }
 /*F5*/
 uint8 u8RemoveCarFromSector( tenParkingSectors enCurrentSector )						// int func so it returns true or false
 {
-	if ( enCurrentSector == enSector0 )													// if's for each sector
-	{
-		if ( astMyParks[enSector0].u8NotAvailableSlots > 0 )							// only remove car if there are slots occupied
+		if ( astMyParks[enCurrentSector].u8NotAvailableSlots > 0 )							// only remove car if there are slots occupied
 		{
-			astMyParks[enSector0].u8NotAvailableSlots--;								// subtract an occupied slot (decrement)
-			astMyParks[enSector0].u8AvailableSlots++;									// add an available one 	 (increment)
+			astMyParks[enCurrentSector].u8NotAvailableSlots--;							// subtract an occupied slot (decrement)
+			astMyParks[enCurrentSector].u8AvailableSlots++;								// add an available one 	 (increment)
 			return PARKING_LOT_AVAILABLE;												// return "true"
 		}
 		else																			// if there are no slots occuppied then don't remove car
 		{
 			return PARKING_LOT_UNAVAILABLE;												// return "false"
 		}
-	}
-	else if ( enCurrentSector == enSector1 )											// other sectors --- 
-	{
-		if ( astMyParks[enSector1].u8NotAvailableSlots > 0 )
-		{
-			astMyParks[enSector0].u8NotAvailableSlots--;
-			astMyParks[enSector0].u8AvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		if ( astMyParks[enSector2].u8NotAvailableSlots > 0 )
-		{
-			astMyParks[enSector0].u8NotAvailableSlots--;
-			astMyParks[enSector0].u8AvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if( enCurrentSector == enSector3 )
-	{
-		if ( astMyParks[enSector3].u8NotAvailableSlots > 0 )
-		{
-			astMyParks[enSector0].u8NotAvailableSlots--;
-			astMyParks[enSector0].u8AvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		if ( astMyParks[enSector4].u8NotAvailableSlots > 0 )
-		{
-			astMyParks[enSector0].u8NotAvailableSlots--;
-			astMyParks[enSector0].u8AvailableSlots++;
-			return PARKING_LOT_AVAILABLE;
-		}
-		else
-		{
-			return PARKING_LOT_UNAVAILABLE;
-		}
-	}																					// ---
-	else
-	{
-		//nothing to do 
-	}
 }
 /*F6*/
 void u8ImportPaymentOfSlot( tenParkingSectors enCurrentSector )
 {
-	if ( enCurrentSector == enSector0 )													// if for each sector
-	{
-		astMyParks[enSector0].u32MoneyEarn += PARKING_COST;								// add $10 (parking cost)  
-	}																					// other sectors ---
-	else if ( enCurrentSector == enSector1 )
-	{
-		astMyParks[enSector1].u32MoneyEarn += PARKING_COST;
-	}
-	else if ( enCurrentSector == enSector2 )
-	{
-		astMyParks[enSector2].u32MoneyEarn += PARKING_COST;
-	}
-	else if ( enCurrentSector == enSector3 )
-	{
-		astMyParks[enSector3].u32MoneyEarn += PARKING_COST;
-	}
-	else if ( enCurrentSector == enSector4 )
-	{
-		astMyParks[enSector4].u32MoneyEarn += PARKING_COST;
-	}																					// ---
-	else
-	{
-		//nothing to do 
-	}
+	astMyParks[enCurrentSector].u32MoneyEarn += PARKING_COST;							// add $10 (parking cost)  
 }
