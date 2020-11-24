@@ -25,17 +25,18 @@ typedef enum
 
 //prototypes
 
+void delay ( uint16 u16MilliSeconds );
 uint8 CheckInitialWeight ( uint8 u8Weight );
 uint8 CheckFinalWeight ( uint8 u8Weight );
-void delay ( uint16 u16MilliSeconds );
-void Drinks ( uint8 u8Beverage );
 uint8 CheckForProduct ( uint8 u8Beverage );
-uint8 Menu (  );
+uint8 Menu ();
 
 //defines
 
-#define WEIGHT_TRESHOLD_EMPTY		0		//empty cup
+#define WEIGHT_TRESHOLD_EMPTY		1		//empty cup
+#define WEIGHT_NO_CUP				0		//no cup
 #define WEIGHT_TRESHOLD_FULL		10		//full cup
+
 #define TRUE						1
 #define FALSE						0
 
@@ -56,4 +57,6 @@ uint8 Menu (  );
 #define OLIVES						24		//olives
 #define PEACH_SCHNAPPS				60		//servings
 #define ICE							99		//servings
- 
+
+#define Y_ASCII_CHARACTER 			121 
+#define N_ASCII_CHARACTER			110
