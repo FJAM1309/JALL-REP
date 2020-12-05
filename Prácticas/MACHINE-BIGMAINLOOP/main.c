@@ -1,9 +1,10 @@
-#include "BML.h"
+#include "stdio.h"
+#include "EXECONFIG.h"
 
-void main (void)
+void main ( void )
 {
-	while(1)
+	while( 1 )
 	{
-		BML();
+		EXE();
 	}
 }
