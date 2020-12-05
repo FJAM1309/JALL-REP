@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "Bombs.h"
+#include "EXECONFIG.h"
 
 void main ( void )
 {
