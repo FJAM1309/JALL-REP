@@ -4,5 +4,5 @@ void BOMB_C ( uint8 u8BombC );
 
 void BOMB_C ( uint8 u8BombC )
 {
-	printf("BOMB C ACTIVE, CYCLES LEFT:%d\n",u8BombC);
+	printf("BOMB C ACTIVE, SECONDS LEFT:%d\n",u8BombC);
 }
